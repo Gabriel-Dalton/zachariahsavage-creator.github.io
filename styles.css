@@ -268,7 +268,14 @@ body.page-full-gallery {
 .home-page-bg,
 .full-gallery-page-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: auto;
+  height: 100vh;
+  height: 100svh;
+  height: var(--stable-viewport-height, 100svh);
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
@@ -497,7 +504,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1672,6 +1679,11 @@ body.page-full-gallery .onepage-section__heading {
   .page-home .gallery,
   .page-home .gallery-flow-track {
     content-visibility: visible;
+  }
+
+  /* Marquee already animates on the compositor; drop will-change during touch scroll. */
+  .gallery-flow-track.flow-marquee-active {
+    will-change: auto;
   }
 }
 
