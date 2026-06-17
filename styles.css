@@ -505,7 +505,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2375,6 +2375,9 @@ body.page-full-gallery .portfolio-toggle__button {
 
 body.page-full-gallery .portfolio-date-extra,
 body.page-full-gallery .portfolio-date-extra-inner,
+body.page-full-gallery .portfolio-date-extra-inner .media-item,
+body.page-full-gallery .portfolio-date-extra-inner .media-item img,
+body.page-full-gallery .portfolio-date-extra-inner .media-item video,
 body.page-full-gallery .portfolio-date-toggle,
 body.page-full-gallery .portfolio-date-toggle__icon svg {
   transition: none !important;
