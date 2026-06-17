@@ -258,6 +258,7 @@ body.page-contact {
 
 html:has(body.page-full-gallery) {
   background-color: #141414;
+  scroll-behavior: auto;
 }
 
 body.page-full-gallery {
@@ -504,7 +505,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1003,6 +1004,8 @@ body.page-contact .gallery-bar__menu-link:visited {
   padding-top: 0;
   height: auto;
   min-height: 0;
+  /* Prevent scroll anchoring from snapping to top when flow rows reflow above the bio. */
+  overflow-anchor: none;
 }
 
 .onepage-section--gallery {
@@ -2368,10 +2371,17 @@ body.page-full-gallery .portfolio-toggle__button {
   display: block;
   width: 1em;
   height: 1em;
-  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-date-toggle--expanded .portfolio-date-toggle__icon svg {
+body.page-full-gallery .portfolio-date-extra,
+body.page-full-gallery .portfolio-date-extra-inner,
+body.page-full-gallery .portfolio-date-toggle,
+body.page-full-gallery .portfolio-date-toggle__icon svg {
+  transition: none !important;
+  animation: none !important;
+}
+
+body.page-full-gallery .portfolio-date-toggle--expanded .portfolio-date-toggle__icon svg {
   transform: rotate(180deg);
 }
 
@@ -2382,7 +2392,7 @@ body.page-full-gallery .portfolio-toggle__button {
   }
 }
 
-/* Full gallery: equal vertical + horizontal gap between rows; smooth reveal for extra rows */
+/* Full gallery: equal vertical + horizontal gap between rows. */
 .portfolio-date-rows {
   display: flex;
   flex-direction: column;
@@ -2395,7 +2405,7 @@ body.page-full-gallery .portfolio-toggle__button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--portfolio-section-gap, 16px);
   width: 100%;
-  align-items: start;
+  align-items: stretch;
 }
 
 .portfolio-date-grid--stacked {
@@ -2406,33 +2416,23 @@ body.page-full-gallery .portfolio-toggle__button {
   margin-top: var(--portfolio-section-gap, 16px);
 }
 
+/* Full gallery: instant folder expand/collapse — no grid-row reveal. */
 .portfolio-date-extra {
-  display: grid;
-  grid-template-rows: 0fr;
-  overflow: hidden;
+  display: none;
   overflow-anchor: none;
-  transition: grid-template-rows 0.42s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-date-extra.portfolio-date-extra--open {
-  grid-template-rows: 1fr;
+  display: block;
 }
 
 .portfolio-date-extra-inner {
-  min-height: 0;
-  overflow: hidden;
   display: block;
 }
 
 .portfolio-date-extra-inner > .portfolio-date-grid + .portfolio-date-grid,
 .portfolio-date-rows > .portfolio-date-grid + .portfolio-date-grid {
   margin-top: var(--portfolio-section-gap, 16px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .portfolio-date-extra {
-    transition: none;
-  }
 }
 
 .portfolio-row {
@@ -2478,11 +2478,14 @@ body.page-full-gallery .portfolio-grid .full-gallery-tile {
   width: 100% !important;
   height: auto !important;
   max-width: none !important;
-  align-self: start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  overflow: visible;
+  overflow: hidden;
 }
 
 body.page-full-gallery .portfolio-grid .full-gallery-tile--fullwidth {
@@ -2499,15 +2502,20 @@ body.page-full-gallery .portfolio-grid .full-gallery-tile--orphan-portrait {
 
 body.page-full-gallery .portfolio-grid .full-gallery-tile--fullwidth img,
 body.page-full-gallery .portfolio-grid .full-gallery-tile--fullwidth video {
+  height: auto !important;
+  flex: none;
   margin-inline: auto;
 }
 
 body.page-full-gallery .portfolio-grid .full-gallery-tile img,
 body.page-full-gallery .portfolio-grid .full-gallery-tile video {
   width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
   max-height: none !important;
+  flex: 1 1 auto;
+  min-height: 0;
   object-fit: contain !important;
+  object-position: center;
   border-radius: var(--radius-md);
   display: block;
 }
@@ -3345,6 +3353,12 @@ body.page-profile {
 
   html {
     scroll-padding-top: calc(104px + env(safe-area-inset-top, 0px) + 1.25rem);
+    /* Avoid smooth programmatic corrections feeling like a delayed jump on touch scroll. */
+    scroll-behavior: auto;
+  }
+
+  body.page-home .gallery {
+    overflow-anchor: none;
   }
 
   .onepage-section__heading,

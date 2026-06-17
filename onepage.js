@@ -114,40 +114,40 @@ function positiveModulo(value, modulus) {
 }
 
 const FLOW_BASE_ITEMS = [
-  "1_3730.webp",
-  "13.webp",
-  "2_1826.webp",
-  "DSC_7318.webp",
-  "4_5325.webp",
-  "16.webp",
-  "DSC_7326.webp",
-  "17.webp",
-  "2_2040.webp",
-  "20.webp",
-  "6.webp",
-  "1_3746.webp",
-  "5_2065.webp",
-  "5_2094.webp",
-  "5_3353.webp",
-  "5_4391.webp",
-  "4_5983 (1).webp",
-  "4_7165.webp",
-  "4_7270.webp",
+  "Assets/optimized/1_3730.webp",
+  "Assets/optimized/13.webp",
+  "Assets/optimized/2_1826.webp",
+  "Assets/optimized/DSC_7318.webp",
+  "Assets/optimized/4_5325.webp",
+  "Assets/optimized/16.webp",
+  "Assets/optimized/DSC_7326.webp",
+  "Assets/optimized/17.webp",
+  "Assets/optimized/2_2040.webp",
+  "Assets/optimized/20.webp",
+  "Assets/optimized/6.webp",
+  "Assets/optimized/1_3746.webp",
+  "Assets/optimized/5_2065.webp",
+  "Assets/optimized/5_2094.webp",
+  "Assets/optimized/5_3353.webp",
+  "Assets/optimized/5_4391.webp",
+  "Assets/optimized/4_5983 (1).webp",
+  "Assets/optimized/4_7165.webp",
+  "Assets/optimized/4_7270.webp",
 ];
 
 /** Full-gallery-only: keyed paths (not `N_` filenames) get their own pinned section. */
 /** Subset of Listening Room shots that appear in the home flow carousel. */
 const FLOW_LISTENING_ROOM_ITEMS = [
-  "6.1.webp",
-  "18.webp",
+  "Assets/optimized/6.1.webp",
+  "Assets/optimized/18.webp",
 ];
 
-const FLOW_STACKS_RATS_NEST_ITEMS = ["DSC_7296.webp"];
+const FLOW_STACKS_RATS_NEST_ITEMS = ["Assets/optimized/DSC_7296.webp"];
 
 const FLOW_MICO_ITEMS = [
-  "mico-4.webp",
-  "mico-12.webp",
-  "mico-2.webp",
+  "Assets/optimized/MICO/mico-4.webp",
+  "Assets/optimized/MICO/mico-12.webp",
+  "Assets/optimized/MICO/mico-2.webp",
 ];
 
 const FLOW_PINNED_INSERTS = [
@@ -182,26 +182,26 @@ const FULL_GALLERY_LISTENING_ROOM = {
   order: -2,
   title: "Listening Room @ Longboat Hall",
   sources: [
-    "13.webp",
-    "16.webp",
-    "17.webp",
-    "18.webp",
-    "33.webp",
-    "6.1.webp",
-    "11.1.webp",
-    "14.1.webp",
-    "25.1.webp",
-    "26.webp",
-    "35.webp",
-    "37.webp",
-    "4.1.webp",
-    "40.webp",
-    "41.webp",
-    "42.webp",
-    "43.webp",
-    "47.webp",
-    "7.1.webp",
-    "8.1.webp",
+    "Assets/optimized/13.webp",
+    "Assets/optimized/16.webp",
+    "Assets/optimized/17.webp",
+    "Assets/optimized/18.webp",
+    "Assets/optimized/33.webp",
+    "Assets/optimized/6.1.webp",
+    "Assets/optimized/11.1.webp",
+    "Assets/optimized/14.1.webp",
+    "Assets/optimized/25.1.webp",
+    "Assets/optimized/26.webp",
+    "Assets/optimized/35.webp",
+    "Assets/optimized/37.webp",
+    "Assets/optimized/4.1.webp",
+    "Assets/optimized/40.webp",
+    "Assets/optimized/41.webp",
+    "Assets/optimized/42.webp",
+    "Assets/optimized/43.webp",
+    "Assets/optimized/47.webp",
+    "Assets/optimized/7.1.webp",
+    "Assets/optimized/8.1.webp",
   ],
 };
 
@@ -210,21 +210,21 @@ const FULL_GALLERY_SUPERSTAR_CRUSH_DINAS = {
   order: -1.875,
   title: "Superstar Crush @ Dina's Tavern",
   sources: [
-    "DSC_0781.webp",
-    "DSC_0598.webp",
-    "DSC_0622.webp",
-    "DSC_0716.webp",
-    "DSC_0743.webp",
-    "DSC_0771.webp",
-    "DSC_0586.webp",
-    "DSC_0728.webp",
-    "DSC_0790.webp",
-    "DSC_0861.webp",
-    "DSC_0814.webp",
-    "DSC_0818.webp",
-    "DSC_0916.webp",
-    "DSC_0782.webp",
-    "DSC_0910.webp",
+    "Assets/optimized/DSC_0781.webp",
+    "Assets/optimized/DSC_0598.webp",
+    "Assets/optimized/DSC_0622.webp",
+    "Assets/optimized/DSC_0716.webp",
+    "Assets/optimized/DSC_0743.webp",
+    "Assets/optimized/DSC_0771.webp",
+    "Assets/optimized/DSC_0586.webp",
+    "Assets/optimized/DSC_0728.webp",
+    "Assets/optimized/DSC_0790.webp",
+    "Assets/optimized/DSC_0861.webp",
+    "Assets/optimized/DSC_0814.webp",
+    "Assets/optimized/DSC_0818.webp",
+    "Assets/optimized/DSC_0916.webp",
+    "Assets/optimized/DSC_0782.webp",
+    "Assets/optimized/DSC_0910.webp",
   ],
 };
 
@@ -233,13 +233,13 @@ const FULL_GALLERY_STACKS_RATS_NEST = {
   order: -1.5,
   title: "Stacks @ Rats Nest",
   sources: [
-    "DSC_7344.webp",
-    "DSC_7296.webp",
-    "DSC_7281.webp",
-    "DSC_7337.webp",
-    "DSC_7308.webp",
-    "DSC_7318.webp",
-    "DSC_7326.webp",
+    "Assets/optimized/DSC_7344.webp",
+    "Assets/optimized/DSC_7296.webp",
+    "Assets/optimized/DSC_7281.webp",
+    "Assets/optimized/DSC_7337.webp",
+    "Assets/optimized/DSC_7308.webp",
+    "Assets/optimized/DSC_7318.webp",
+    "Assets/optimized/DSC_7326.webp",
   ],
 };
 
@@ -248,15 +248,15 @@ const FULL_GALLERY_PINNED_SHOW = {
   order: -1,
   title: "Sam William Thomas @ Burdock",
   sources: [
-    "9.webp",
-    "6.webp",
-    "DSC_6790.webp",
-    "7.webp",
-    "20.webp",
-    "22.webp",
-    "19.webp",
-    "DSC_6198.webp",
-    "8.webp",
+    "Assets/optimized/9.webp",
+    "Assets/optimized/6.webp",
+    "Assets/optimized/DSC_6790.webp",
+    "Assets/optimized/7.webp",
+    "Assets/optimized/20.webp",
+    "Assets/optimized/22.webp",
+    "Assets/optimized/19.webp",
+    "Assets/optimized/DSC_6198.webp",
+    "Assets/optimized/8.webp",
   ],
 };
 
@@ -265,27 +265,27 @@ const FULL_GALLERY_MICO_HARD_LUCK = {
   order: -3,
   title: "MICO @ Hard Luck",
   sources: [
-    "mico-4.webp",
-    "mico-3.webp",
-    "mico-5.webp",
-    "mico-6.webp",
-    "mico-7.webp",
-    "mico-8.webp",
-    "mico-10.webp",
-    "mico-11.webp",
-    "mico-12.webp",
-    "mico-14.webp",
-    "mico-15.webp",
-    "mico-16.webp",
-    "mico-17.webp",
-    "mico-19.webp",
-    "mico-1 copy.webp",
-    "mico-2.webp",
-    "mico-9.webp",
-    "mico-20.webp",
-    "mico-21.webp",
-    "mico-13.webp",
-    "mico-18.webp",
+    "Assets/optimized/MICO/mico-4.webp",
+    "Assets/optimized/MICO/mico-3.webp",
+    "Assets/optimized/MICO/mico-5.webp",
+    "Assets/optimized/MICO/mico-6.webp",
+    "Assets/optimized/MICO/mico-7.webp",
+    "Assets/optimized/MICO/mico-8.webp",
+    "Assets/optimized/MICO/mico-10.webp",
+    "Assets/optimized/MICO/mico-11.webp",
+    "Assets/optimized/MICO/mico-12.webp",
+    "Assets/optimized/MICO/mico-14.webp",
+    "Assets/optimized/MICO/mico-15.webp",
+    "Assets/optimized/MICO/mico-16.webp",
+    "Assets/optimized/MICO/mico-17.webp",
+    "Assets/optimized/MICO/mico-19.webp",
+    "Assets/optimized/MICO/mico-1 copy.webp",
+    "Assets/optimized/MICO/mico-2.webp",
+    "Assets/optimized/MICO/mico-9.webp",
+    "Assets/optimized/MICO/mico-20.webp",
+    "Assets/optimized/MICO/mico-21.webp",
+    "Assets/optimized/MICO/mico-13.webp",
+    "Assets/optimized/MICO/mico-18.webp",
   ],
 };
 
@@ -337,37 +337,37 @@ const fullGalleryNumberedItems = [
   ...FULL_GALLERY_STACKS_RATS_NEST.sources,
   ...FULL_GALLERY_PINNED_SHOW.sources,
   ...FULL_GALLERY_MICO_HARD_LUCK.sources,
-  "1_3566 (1).webp",
-  "1_3719 (1).webp",
-  "1_3746.webp",
-  "1_3714.webp",
-  "1_3730.webp",
-  "1_3697 (1).webp",
-  "2_1826.webp",
-  "2_1981.webp",
-  "2_1932.webp",
-  "2_0829.webp",
-  "2_2040.webp",
-  "3_8505.webp",
-  "3_8632.webp",
-  "3_8635.webp",
-  "3_8640.webp",
-  "3_9088.webp",
-  "3_9098.webp",
-  "4_5325.webp",
-  "4_7165.webp",
-  "4_5573.webp",
-  "4_5983 (1).webp",
-  "4_7270.webp",
-  "5_3353.webp",
-  "5_4391.webp",
-  "5_2065.webp",
-  "5_2094.webp",
-  "5_2575.webp",
+  "Assets/optimized/1_3566 (1).webp",
+  "Assets/optimized/1_3719 (1).webp",
+  "Assets/optimized/1_3746.webp",
+  "Assets/optimized/1_3714.webp",
+  "Assets/optimized/1_3730.webp",
+  "Assets/optimized/1_3697 (1).webp",
+  "Assets/optimized/2_1826.webp",
+  "Assets/optimized/2_1981.webp",
+  "Assets/optimized/2_1932.webp",
+  "Assets/optimized/2_0829.webp",
+  "Assets/optimized/2_2040.webp",
+  "Assets/optimized/3_8505.webp",
+  "Assets/optimized/3_8632.webp",
+  "Assets/optimized/3_8635.webp",
+  "Assets/optimized/3_8640.webp",
+  "Assets/optimized/3_9088.webp",
+  "Assets/optimized/3_9098.webp",
+  "Assets/optimized/4_5325.webp",
+  "Assets/optimized/4_7165.webp",
+  "Assets/optimized/4_5573.webp",
+  "Assets/optimized/4_5983 (1).webp",
+  "Assets/optimized/4_7270.webp",
+  "Assets/optimized/5_3353.webp",
+  "Assets/optimized/5_4391.webp",
+  "Assets/optimized/5_2065.webp",
+  "Assets/optimized/5_2094.webp",
+  "Assets/optimized/5_2575.webp",
 ];
 
 /** Used on full gallery page but not in the grid (e.g. page background). */
-const FULL_GALLERY_PAGE_ONLY_PATHS = ["3.webp"];
+const FULL_GALLERY_PAGE_ONLY_PATHS = ["Assets/optimized/3.webp"];
 
 const FULL_GALLERY_PATH_SET = new Set([
   ...fullGalleryNumberedItems,
@@ -375,107 +375,107 @@ const FULL_GALLERY_PATH_SET = new Set([
 ]);
 
 const FULL_GALLERY_PATH_ASPECTS = {
-  "1_3566 (1).webp": 0.667,
-  "1_3697 (1).webp": 1.501,
-  "1_3714.webp": 1.5,
-  "1_3719 (1).webp": 0.667,
-  "1_3730.webp": 1.5,
-  "1_3746.webp": 0.667,
-  "11.1.webp": 0.667,
-  "13.webp": 0.667,
-  "14.1.webp": 1.5,
-  "16.webp": 0.667,
-  "17.webp": 0.667,
-  "1780443494761.webp": 0.481,
-  "18.webp": 0.667,
-  "19.webp": 1.5,
-  "2_0829.webp": 1.5,
-  "2_1826.webp": 0.667,
-  "2_1932.webp": 0.766,
-  "2_1981.webp": 0.667,
-  "2_2040.webp": 1.5,
-  "20.webp": 1,
-  "22.webp": 1,
-  "25.1.webp": 1.5,
-  "26.webp": 1.5,
-  "3_8505.webp": 1.5,
-  "3_8632.webp": 1.5,
-  "3_8635.webp": 1.5,
-  "3_8640.webp": 1.5,
-  "3_9088.webp": 1.5,
-  "3_9098.webp": 0.667,
-  "3.webp": 1.5,
-  "33.webp": 0.667,
-  "35.webp": 0.667,
-  "37.webp": 1.5,
-  "4_5325.webp": 0.667,
-  "4_5573.webp": 1.5,
-  "4_5983 (1).webp": 1.5,
-  "4_7165.webp": 0.667,
-  "4_7270.webp": 1.5,
-  "4.1.webp": 1.5,
-  "40.webp": 0.667,
-  "41.webp": 0.667,
-  "42.webp": 1.5,
-  "43.webp": 0.667,
-  "47.webp": 0.667,
-  "5_2065.webp": 0.667,
-  "5_2094.webp": 0.667,
-  "5_2575.webp": 0.667,
-  "5_3353.webp": 1.5,
-  "5_4391.webp": 1.5,
-  "6.1.webp": 0.667,
-  "6.webp": 1.5,
-  "7.1.webp": 1.5,
-  "7.webp": 0.667,
-  "8.1.webp": 1.5,
-  "8.webp": 1.5,
-  "9.webp": 1.5,
-  "DSC_0586.webp": 1.5,
-  "DSC_0598.webp": 0.75,
-  "DSC_0622.webp": 0.667,
-  "DSC_0716.webp": 0.667,
-  "DSC_0728.webp": 1.5,
-  "DSC_0743.webp": 0.667,
-  "DSC_0771.webp": 0.667,
-  "DSC_0781.webp": 0.667,
-  "DSC_0782.webp": 0.667,
-  "DSC_0790.webp": 1,
-  "DSC_0814.webp": 1.5,
-  "DSC_0818.webp": 1.5,
-  "DSC_0861.webp": 1,
-  "DSC_0910.webp": 0.667,
-  "DSC_0916.webp": 1.5,
-  "DSC_6198.webp": 1.5,
-  "DSC_6790.webp": 0.667,
-  "DSC_7281.webp": 1.261,
-  "DSC_7296.webp": 0.667,
-  "DSC_7308.webp": 0.667,
-  "DSC_7318.webp": 0.667,
-  "DSC_7326.webp": 0.667,
-  "DSC_7337.webp": 1.5,
-  "DSC_7344.webp": 0.667,
-  "mico-1 copy.webp": 1.333,
-  "mico-10.webp": 0.75,
-  "mico-11.webp": 0.75,
-  "mico-12.webp": 0.75,
-  "mico-13.webp": 1.5,
-  "mico-14.webp": 0.75,
-  "mico-15.webp": 0.75,
-  "mico-16.webp": 0.75,
-  "mico-17.webp": 0.75,
-  "mico-18.webp": 1.5,
-  "mico-19.webp": 0.75,
-  "mico-2.webp": 1.333,
-  "mico-20.webp": 1.333,
-  "mico-21.webp": 1.333,
-  "mico-3.webp": 0.75,
-  "mico-4.webp": 0.75,
-  "mico-5.webp": 0.75,
-  "mico-6.webp": 0.75,
-  "mico-7.webp": 0.75,
-  "mico-8.webp": 0.75,
-  "mico-9.webp": 1.333,
+  "Assets/optimized/1_3566 (1).webp": 0.667,
+  "Assets/optimized/1_3697 (1).webp": 1.501,
+  "Assets/optimized/1_3714.webp": 1.5,
+  "Assets/optimized/1_3719 (1).webp": 0.667,
+  "Assets/optimized/1_3730.webp": 1.5,
+  "Assets/optimized/1_3746.webp": 0.667,
+  "Assets/optimized/11.1.webp": 0.667,
+  "Assets/optimized/13.webp": 0.667,
+  "Assets/optimized/14.1.webp": 1.5,
+  "Assets/optimized/16.webp": 0.667,
+  "Assets/optimized/17.webp": 0.667,
+  "Assets/optimized/1780443494761.webp": 0.481,
+  "Assets/optimized/18.webp": 0.667,
+  "Assets/optimized/19.webp": 1.5,
+  "Assets/optimized/2_0829.webp": 1.5,
+  "Assets/optimized/2_1826.webp": 0.667,
+  "Assets/optimized/2_1932.webp": 0.766,
+  "Assets/optimized/2_1981.webp": 0.667,
+  "Assets/optimized/2_2040.webp": 1.5,
+  "Assets/optimized/20.webp": 1,
+  "Assets/optimized/22.webp": 1,
+  "Assets/optimized/25.1.webp": 1.5,
+  "Assets/optimized/26.webp": 1.5,
+  "Assets/optimized/3_8505.webp": 1.5,
+  "Assets/optimized/3_8632.webp": 1.5,
+  "Assets/optimized/3_8635.webp": 1.5,
+  "Assets/optimized/3_8640.webp": 1.5,
+  "Assets/optimized/3_9088.webp": 1.5,
+  "Assets/optimized/3_9098.webp": 0.667,
+  "Assets/optimized/3.webp": 1.5,
+  "Assets/optimized/33.webp": 0.667,
+  "Assets/optimized/35.webp": 0.667,
+  "Assets/optimized/37.webp": 1.5,
+  "Assets/optimized/4_5325.webp": 0.667,
+  "Assets/optimized/4_5573.webp": 1.5,
+  "Assets/optimized/4_5983 (1).webp": 1.5,
+  "Assets/optimized/4_7165.webp": 0.667,
+  "Assets/optimized/4_7270.webp": 1.5,
+  "Assets/optimized/4.1.webp": 1.5,
+  "Assets/optimized/40.webp": 0.667,
+  "Assets/optimized/41.webp": 0.667,
+  "Assets/optimized/42.webp": 1.5,
+  "Assets/optimized/43.webp": 0.667,
+  "Assets/optimized/47.webp": 0.667,
+  "Assets/optimized/5_2065.webp": 0.667,
+  "Assets/optimized/5_2094.webp": 0.667,
+  "Assets/optimized/5_2575.webp": 0.667,
+  "Assets/optimized/5_3353.webp": 1.5,
+  "Assets/optimized/5_4391.webp": 1.5,
+  "Assets/optimized/6.1.webp": 0.667,
+  "Assets/optimized/6.webp": 1.5,
+  "Assets/optimized/7.1.webp": 1.5,
+  "Assets/optimized/7.webp": 0.667,
+  "Assets/optimized/8.1.webp": 1.5,
+  "Assets/optimized/8.webp": 1.5,
+  "Assets/optimized/9.webp": 1.5,
+  "Assets/optimized/DSC_0586.webp": 1.5,
+  "Assets/optimized/DSC_0598.webp": 0.75,
+  "Assets/optimized/DSC_0622.webp": 0.667,
+  "Assets/optimized/DSC_0716.webp": 0.667,
+  "Assets/optimized/DSC_0728.webp": 1.5,
+  "Assets/optimized/DSC_0743.webp": 0.667,
+  "Assets/optimized/DSC_0771.webp": 0.667,
+  "Assets/optimized/DSC_0781.webp": 0.667,
+  "Assets/optimized/DSC_0782.webp": 0.667,
+  "Assets/optimized/DSC_0790.webp": 1,
+  "Assets/optimized/DSC_0814.webp": 1.5,
+  "Assets/optimized/DSC_0818.webp": 1.5,
+  "Assets/optimized/DSC_0861.webp": 1,
+  "Assets/optimized/DSC_0910.webp": 0.667,
+  "Assets/optimized/DSC_0916.webp": 1.5,
+  "Assets/optimized/DSC_6198.webp": 1.5,
+  "Assets/optimized/DSC_6790.webp": 0.667,
+  "Assets/optimized/DSC_7281.webp": 1.261,
+  "Assets/optimized/DSC_7296.webp": 0.667,
+  "Assets/optimized/DSC_7308.webp": 0.667,
+  "Assets/optimized/DSC_7318.webp": 0.667,
+  "Assets/optimized/DSC_7326.webp": 0.667,
+  "Assets/optimized/DSC_7337.webp": 1.5,
+  "Assets/optimized/DSC_7344.webp": 0.667,
+  "Assets/optimized/MICO/mico-1 copy.webp": 1.333,
+  "Assets/optimized/MICO/mico-10.webp": 0.75,
+  "Assets/optimized/MICO/mico-11.webp": 0.75,
+  "Assets/optimized/MICO/mico-12.webp": 0.75,
+  "Assets/optimized/MICO/mico-13.webp": 1.5,
+  "Assets/optimized/MICO/mico-14.webp": 0.75,
+  "Assets/optimized/MICO/mico-15.webp": 0.75,
+  "Assets/optimized/MICO/mico-16.webp": 0.75,
+  "Assets/optimized/MICO/mico-17.webp": 0.75,
+  "Assets/optimized/MICO/mico-18.webp": 1.5,
+  "Assets/optimized/MICO/mico-19.webp": 0.75,
+  "Assets/optimized/MICO/mico-2.webp": 1.333,
+  "Assets/optimized/MICO/mico-20.webp": 1.333,
+  "Assets/optimized/MICO/mico-21.webp": 1.333,
+  "Assets/optimized/MICO/mico-3.webp": 0.75,
+  "Assets/optimized/MICO/mico-4.webp": 0.75,
+  "Assets/optimized/MICO/mico-5.webp": 0.75,
+  "Assets/optimized/MICO/mico-6.webp": 0.75,
+  "Assets/optimized/MICO/mico-7.webp": 0.75,
+  "Assets/optimized/MICO/mico-8.webp": 0.75,
+  "Assets/optimized/MICO/mico-9.webp": 1.333,
 };
 
 function getPathAspectRatio(path) {
@@ -578,7 +578,7 @@ function getNumberedFolderSortedSources(label, collectedSources) {
   const ordered = explicit.filter((path) => inFolder.has(path));
   const remainder = collectedSources.filter((path) => !ordered.includes(path));
   return sortPathsForPairedGridLayout([...ordered, ...remainder], {
-    useBestPreviewPair: true,
+    lockFirst: Math.min(2, ordered.length),
   });
 }
 
@@ -587,14 +587,14 @@ function isInFullGallery(path) {
 }
 
 /** Contact section background — must be full-gallery images only. */
-const CONTACT_BG_HERO_PATH = "20.webp";
+const CONTACT_BG_HERO_PATH = "Assets/optimized/20.webp";
 const CONTACT_BG_IMAGES = [
   CONTACT_BG_HERO_PATH,
-  "DSC_7344.webp",
-  "13.webp",
-  "DSC_7281.webp",
-  "1_3730.webp",
-  "DSC_6790.webp",
+  "Assets/optimized/DSC_7344.webp",
+  "Assets/optimized/13.webp",
+  "Assets/optimized/DSC_7281.webp",
+  "Assets/optimized/1_3730.webp",
+  "Assets/optimized/DSC_6790.webp",
 ];
 
 const mediaItems = dedupeFlowItems(
@@ -621,26 +621,26 @@ const fullGallerySectionTitles = {
 /** Paired preview + same-height rows (same layout rules as DAPHNE / folder "2"). */
 const FULL_GALLERY_NUMBERED_FOLDER_SOURCE_ORDER = {
   "1": [
-    "1_3566 (1).webp",
-    "1_3719 (1).webp",
-    "1_3746.webp",
-    "1_3714.webp",
-    "1_3730.webp",
-    "1_3697 (1).webp",
+    "Assets/optimized/1_3566 (1).webp",
+    "Assets/optimized/1_3719 (1).webp",
+    "Assets/optimized/1_3746.webp",
+    "Assets/optimized/1_3714.webp",
+    "Assets/optimized/1_3730.webp",
+    "Assets/optimized/1_3697 (1).webp",
   ],
   "2": [
-    "2_1826.webp",
-    "2_1981.webp",
-    "2_1932.webp",
-    "2_0829.webp",
-    "2_2040.webp",
+    "Assets/optimized/2_1826.webp",
+    "Assets/optimized/2_1981.webp",
+    "Assets/optimized/2_1932.webp",
+    "Assets/optimized/2_0829.webp",
+    "Assets/optimized/2_2040.webp",
   ],
   "5": [
-    "5_3353.webp",
-    "5_4391.webp",
-    "5_2065.webp",
-    "5_2094.webp",
-    "5_2575.webp",
+    "Assets/optimized/5_3353.webp",
+    "Assets/optimized/5_4391.webp",
+    "Assets/optimized/5_2065.webp",
+    "Assets/optimized/5_2094.webp",
+    "Assets/optimized/5_2575.webp",
   ],
 };
 
@@ -814,6 +814,7 @@ async function loadGalleryFolderExpandedImages(extraInner, extraPaths) {
   refreshPinnedImageSources(extraInner);
   await Promise.all(tiles.map((tile) => ensureDomImagesDecoded(tile)));
   warmGalleryGridImages(extraInner);
+  refineFullGalleryFolderRowHeights(extraInner);
 }
 
 /** Decode + warm folder preview tiles when scrolled near (blobs pinned at boot). */
@@ -871,7 +872,7 @@ async function pinGalleryFolderPreviewImages() {
 
 const FLOW_PRIORITY_PRELOAD_PATHS = buildFlowPriorityPreloadPaths();
 
-const HOME_BIO_IMAGE_PATH = "2024-06-08%20r-8.webp";
+const HOME_BIO_IMAGE_PATH = "Assets/optimized/2024-06-08%20r-8.webp";
 
 /** Blob + in-memory Image() refs so WebKit cannot discard decoded hero tiles. */
 const pinnedBlobUrlByPath = new Map();
@@ -890,8 +891,8 @@ function getAllFlowImagePaths() {
   return mediaItems.filter((item) => typeof item === "string");
 }
 
-const HOME_PAGE_BG_PATH = "1780443494761.webp";
-const FULL_GALLERY_PAGE_BG_PATH = "3.webp";
+const HOME_PAGE_BG_PATH = "Assets/optimized/1780443494761.webp";
+const FULL_GALLERY_PAGE_BG_PATH = "Assets/optimized/3.webp";
 
 function getBootImagePaths() {
   if (document.body?.classList.contains("page-full-gallery")) {
@@ -1987,6 +1988,51 @@ function appendTilesToFullGalleryGrid(gridEl, tileList) {
       lastTile.classList.add("full-gallery-tile--orphan-portrait");
     }
   }
+  schedulePairedRowHeightSync(gridEl);
+}
+
+/** Equalize side-by-side tile heights in 2-col folder grids (DAPHNE-style pairing). */
+function syncPairedRowHeightsInGrid(gridEl) {
+  if (!gridEl?.classList.contains("portfolio-date-grid")) return;
+  if (gridEl.classList.contains("portfolio-date-grid--stacked")) return;
+
+  const tiles = Array.from(
+    gridEl.querySelectorAll(":scope > .media-item.full-gallery-tile")
+  );
+  for (let i = 0; i + 1 < tiles.length; i += 2) {
+    const left = tiles[i];
+    const right = tiles[i + 1];
+    if (!left || !right || right.classList.contains("full-gallery-tile--fullwidth")) break;
+
+    left.style.height = "";
+    right.style.height = "";
+    const maxH = Math.max(left.getBoundingClientRect().height, right.getBoundingClientRect().height);
+    if (maxH > 0) {
+      left.style.height = `${maxH}px`;
+      right.style.height = `${maxH}px`;
+    }
+  }
+}
+
+function schedulePairedRowHeightSync(gridEl) {
+  if (!gridEl) return;
+  const run = () => syncPairedRowHeightsInGrid(gridEl);
+  requestAnimationFrame(() => {
+    run();
+    requestAnimationFrame(run);
+  });
+  gridEl.querySelectorAll("img").forEach((img) => {
+    if (img.complete && img.naturalWidth > 0) return;
+    img.addEventListener("load", run, { once: true });
+    img.addEventListener("error", run, { once: true });
+  });
+}
+
+function refineFullGalleryFolderRowHeights(root) {
+  if (!root) return;
+  root.querySelectorAll(".portfolio-date-grid").forEach((gridEl) => {
+    schedulePairedRowHeightSync(gridEl);
+  });
 }
 
 /** Always-visible folder preview: first two images in source order. */
@@ -2157,13 +2203,6 @@ function createFolderTopCollapseButton() {
   return btn;
 }
 
-const GALLERY_FOLDER_COLLAPSE_MS = 420;
-const GALLERY_FOLDER_NAV_SCROLL_MS = 280;
-
-function easeOutCubic(t) {
-  return 1 - (1 - t) ** 3;
-}
-
 function getGalleryFolderCenteredScrollTarget(sectionEl) {
   if (!sectionEl) return null;
   const scrollTop = getPageScrollTop();
@@ -2214,47 +2253,11 @@ function getGalleryFolderPreviewCenteredScrollTarget(sectionEl) {
   return Math.max(0, block.top + block.height / 2 - headerOffset - visibleHeight / 2);
 }
 
-function animateScrollToScrollTarget(getTargetFn, durationMs) {
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  if (reduceMotion) {
-    const endScroll = getTargetFn();
-    if (endScroll !== null) setPageScrollTop(endScroll);
-    return;
-  }
-
-  const startScroll = getPageScrollTop();
-  const startTime = performance.now();
-  const tick = (now) => {
-    const t = Math.min(1, (now - startTime) / durationMs);
-    const eased = easeOutCubic(t);
-    const endScroll = getTargetFn();
-    if (endScroll === null) return;
-    setPageScrollTop(startScroll + (endScroll - startScroll) * eased);
-    if (t < 1) {
-      requestAnimationFrame(tick);
-    } else {
-      setPageScrollTop(endScroll);
-    }
-  };
-  requestAnimationFrame(tick);
-}
-
-/** Scroll so the folder ends centered in the viewport, in sync with collapse. */
-function animateScrollToFolderDuringCollapse(sectionEl, durationMs = GALLERY_FOLDER_COLLAPSE_MS) {
+/** Instant jump: center the folder preview row (after collapse or nav pick). */
+function scrollToFolderPreview(sectionEl) {
   if (!sectionEl) return;
-  animateScrollToScrollTarget(
-    () => getGalleryFolderCenteredScrollTarget(sectionEl),
-    durationMs
-  );
-}
-
-/** Nav selection: center the folder's first two preview images in the viewport. */
-function animateScrollToFolderPreview(sectionEl, durationMs = GALLERY_FOLDER_NAV_SCROLL_MS) {
-  if (!sectionEl) return;
-  animateScrollToScrollTarget(
-    () => getGalleryFolderPreviewCenteredScrollTarget(sectionEl),
-    durationMs
-  );
+  const target = getGalleryFolderPreviewCenteredScrollTarget(sectionEl);
+  if (target !== null) setPageScrollTop(target);
 }
 
 function createPortfolioDateGroupSection(folderDef, gap, isFullGalleryPage) {
@@ -2334,7 +2337,8 @@ function createPortfolioDateGroupSection(folderDef, gap, isFullGalleryPage) {
       section.classList.remove("portfolio-date-group--expanded");
       section.classList.add("portfolio-date-group--collapsed");
       setFolderToggleState(toggleBtn, false);
-      animateScrollToFolderDuringCollapse(section);
+      void extraOuter.offsetHeight;
+      scrollToFolderPreview(section);
     };
 
     toggleBtn.addEventListener("click", () => {
@@ -2431,7 +2435,7 @@ function renderFullGalleryFolderNav(grid) {
         if (typeof section.expandFolder === "function") {
           section.expandFolder();
         }
-        animateScrollToFolderPreview(section, GALLERY_FOLDER_NAV_SCROLL_MS);
+        scrollToFolderPreview(section);
       });
     }
 
@@ -2484,6 +2488,7 @@ function renderFullGalleryFolders(grid) {
   });
 
   renderFullGalleryFolderNav(grid);
+  refineFullGalleryFolderRowHeights(grid);
 }
 
 function refineVisibleGalleryFolderLayouts(grid) {
@@ -2491,6 +2496,7 @@ function refineVisibleGalleryFolderLayouts(grid) {
   grid.querySelectorAll(`[${GALLERY_FOLDER_PREVIEW_ATTR}]`).forEach((tile) => {
     getTileAspect(tile);
   });
+  refineFullGalleryFolderRowHeights(grid);
 }
 
 function setupFullGalleryPage(grid) {
@@ -2512,6 +2518,8 @@ function setupFullGalleryPage(grid) {
     }, 120);
   }
   window.addEventListener("resize", onResizeFullGallery);
+
+  refineFullGalleryFolderRowHeights(grid);
 }
 
 // Full-gallery helper: group visible tiles by leading filename number and render
@@ -2710,33 +2718,29 @@ function getFixedHeaderScrollOffset() {
 }
 
 function getPageScrollTop() {
-  // Must match `getOnePageScrollRoot`: `body.scrollTop ?? …` is wrong when the
-  // document scrolls on `document.scrollingElement` but `body.scrollTop` stays 0,
-  // which makes scroll-spy + in-page math oscillate while scrolling.
-  const body = document.body;
-  const se = document.scrollingElement;
-  if (body && body.scrollHeight > body.clientHeight) return body.scrollTop;
-  if (se && se.scrollHeight > se.clientHeight) return se.scrollTop;
-  return window.scrollY ?? document.documentElement?.scrollTop ?? 0;
+  const se = document.scrollingElement || document.documentElement;
+  return window.scrollY ?? se?.scrollTop ?? document.body?.scrollTop ?? 0;
 }
 
 function setPageScrollTop(top) {
   const y = Math.max(0, top);
-  const root = getOnePageScrollRoot();
-  if (root === document.body || root === document.documentElement) {
-    window.scrollTo({ top: y, behavior: "auto" });
-    return;
-  }
-  root.scrollTop = y;
+  window.scrollTo({ top: y, behavior: "auto" });
 }
 
-/** Actual scroll container for the one-page layout (usually `body`). */
+/** Actual scroll container for the one-page layout. */
 function getOnePageScrollRoot() {
-  const body = document.body;
-  const se = document.scrollingElement;
-  if (body && body.scrollHeight > body.clientHeight) return body;
-  if (se && se.scrollHeight > se.clientHeight) return se;
-  return body || se || document.documentElement;
+  return document.scrollingElement || document.documentElement || document.body;
+}
+
+/** Keep finger-scroll position when flow DOM above the fold is rebuilt. */
+function preserveScrollPosition(fn) {
+  const scrollY = getPageScrollTop();
+  fn();
+  requestAnimationFrame(() => {
+    if (Math.abs(getPageScrollTop() - scrollY) > 2) {
+      setPageScrollTop(scrollY);
+    }
+  });
 }
 
 /**
@@ -3176,10 +3180,13 @@ async function waitForHomeFlowLayout(rowsState) {
           const widthNow = Math.round(
             document.documentElement.clientWidth || window.innerWidth
           );
-          if (Math.abs(widthNow - widthAtPaint) >= 2) {
+          const widthThreshold = isFlowMobileLayout() ? 56 : 2;
+          if (Math.abs(widthNow - widthAtPaint) >= widthThreshold) {
             if (!flowStarted) {
               unlockFlowLayoutViewportWidth();
-              measureAndPosition(rowsState, { forceRebuild: true });
+              preserveScrollPosition(() => {
+                measureAndPosition(rowsState, { forceRebuild: true });
+              });
               if (rowsState.every((row) => row.segmentWidthPx > 0) && !flowStarted) {
                 startFlowAnimation(rowsState);
                 flowStarted = true;
@@ -3249,34 +3256,47 @@ window.addEventListener("load", async () => {
   });
 
   let resizeTimeout;
-  let lastFlowLayoutWidth = Math.round(
-    document.documentElement.clientWidth || window.innerWidth
-  );
-  const flowRemeasureWidthDelta = () => (isFlowMobileLayout() ? 56 : 2);
+
+  function applyFlowLayoutWidthChange() {
+    if (!rowsState) return;
+    const nextWidth = Math.max(
+      1,
+      Math.round(document.documentElement.clientWidth || window.innerWidth)
+    );
+    if (isFlowMobileLayout()) {
+      unlockFlowLayoutViewportWidth();
+      flowLayoutViewportWidth = nextWidth;
+      lockFlowLayoutViewportWidth();
+    }
+    const flowReady = rowsState.every((row) => (row.segmentTileCount || 0) > 0);
+    if (flowReady) {
+      updateFlowLayoutWidths(rowsState);
+    } else {
+      preserveScrollPosition(() => {
+        measureAndPosition(rowsState);
+      });
+    }
+    refreshFlowTrackAnimations();
+  }
 
   function scheduleFlowRemeasure() {
-    const nextWidth = Math.round(
-      document.documentElement.clientWidth || window.innerWidth
-    );
-    if (Math.abs(nextWidth - lastFlowLayoutWidth) < flowRemeasureWidthDelta()) return;
-    lastFlowLayoutWidth = nextWidth;
+    if (!hasMeaningfulLayoutWidthChange()) return;
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      if (isFlowMobileLayout()) {
-        unlockFlowLayoutViewportWidth();
-        flowLayoutViewportWidth = nextWidth;
-        lockFlowLayoutViewportWidth();
-      }
-      const flowReady = rowsState?.every((row) => (row.segmentTileCount || 0) > 0);
-      if (!rowsState || !flowReady) {
-        if (rowsState) measureAndPosition(rowsState, { forceRebuild: true });
-      } else {
-        updateFlowLayoutWidths(rowsState);
-      }
-      refreshFlowTrackAnimations();
-    }, 150);
+    resizeTimeout = setTimeout(applyFlowLayoutWidthChange, 150);
   }
-  window.addEventListener("resize", scheduleFlowRemeasure);
+
+  window.addEventListener("resize", scheduleFlowRemeasure, { passive: true });
+  window.addEventListener(
+    "orientationchange",
+    () => {
+      window.setTimeout(() => {
+        if (hasMeaningfulLayoutWidthChange()) {
+          applyFlowLayoutWidthChange();
+        }
+      }, 250);
+    },
+    { passive: true }
+  );
 
   setupGridGallery();
   initSharedPageUi();
