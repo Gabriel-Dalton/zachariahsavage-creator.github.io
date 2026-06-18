@@ -505,7 +505,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("Assets/optimized/1780443494761.webp");
+  background-image: url("1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
