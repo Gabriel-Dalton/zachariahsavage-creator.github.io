@@ -506,7 +506,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1358,8 +1358,25 @@ body.page-full-gallery .onepage-section__heading {
   z-index: 1;
 }
 
+.home-bio-row .home-start-btn--pov .home-start-btn__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1em;
+}
+
+.home-bio-row .home-start-btn--pov .home-start-btn__arrow-rest {
+  opacity: 1;
+  transition: opacity 0.12s ease;
+}
+
 .home-bio-row .home-start-btn--pov .home-start-btn__arrow-pop {
-  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .home-bio-row .home-start-btn--pov::before {
@@ -1378,7 +1395,8 @@ body.page-full-gallery .onepage-section__heading {
   rotate: 0deg;
   transform-origin: center center;
   pointer-events: none;
-  will-change: opacity, scale, rotate;
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .home-bio-row .home-start-btn--pov:hover {
@@ -1398,6 +1416,25 @@ body.page-full-gallery .onepage-section__heading {
     to {
       rotate: 360deg;
     }
+  }
+
+  body.page-home .home-bio-row .home-start-btn--pov::before {
+    animation: home-view-gallery-burst-spin
+      calc(var(--view-gallery-burst-spin-duration, 40s) / 2)
+      linear
+      infinite;
+    animation-play-state: paused;
+  }
+
+  body.page-home .home-bio-row .home-start-btn--pov.is-burst-ready::before,
+  body.page-home .home-bio-row .home-start-btn--pov.is-hover-prewarming::before {
+    will-change: transform, opacity;
+  }
+
+  body.page-home .home-bio-row .home-start-btn--pov.is-hover-prewarming::before {
+    animation-play-state: running;
+    opacity: 0.001;
+    scale: 1;
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:hover {
@@ -1429,21 +1466,18 @@ body.page-full-gallery .onepage-section__heading {
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:hover .home-start-btn__arrow-rest {
-    display: none;
+    opacity: 0;
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:hover .home-start-btn__arrow-pop {
-    display: inline;
+    opacity: 1;
+    transition: opacity 0.12s ease var(--view-gallery-star-delay, 0.16s);
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:hover::before {
     opacity: 1;
     scale: 1;
-    animation: home-view-gallery-burst-spin
-      calc(var(--view-gallery-burst-spin-duration, 40s) / 2)
-      linear
-      infinite;
-    animation-delay: var(--view-gallery-star-delay, 0.16s);
+    animation-play-state: running;
     transition:
       opacity var(--view-gallery-star-pop-duration, 0.3s)
         cubic-bezier(0.22, 1.12, 0.36, 1) var(--view-gallery-star-delay, 0.16s),
@@ -1452,7 +1486,7 @@ body.page-full-gallery .onepage-section__heading {
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:not(:hover)::before {
-    animation: none;
+    animation-play-state: paused;
     opacity: 0;
     scale: 0.5;
     rotate: 0deg;
