@@ -505,7 +505,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1688,6 +1688,23 @@ body.page-full-gallery .onepage-section__heading {
   .gallery-flow-track.flow-marquee-active {
     will-change: auto;
   }
+
+  /* Only the first tiles per row stay GPU-promoted; the rest use normal compositing. */
+  .gallery-row .gallery-flow-track .media-item--priority-render {
+    will-change: auto;
+    transform: scale(var(--scale, 1));
+  }
+
+  .gallery-row .media-item--priority-render img,
+  .gallery-row .media-item--priority-render video {
+    will-change: auto;
+    transform: none;
+  }
+
+  /* Pause marquee motion while the finger is scrolling — resumes when scroll stops. */
+  html.mobile-touch-scrolling .gallery-flow-track.flow-marquee-active {
+    animation-play-state: paused !important;
+  }
 }
 
 @keyframes flow-marquee {
@@ -1929,8 +1946,8 @@ html.site-boot-locked:has(body.page-full-gallery) .site-boot-gate {
   }
 
   .gallery-row .gallery-flow-track .media-item--priority-render {
-    transform: translateZ(0) scale(1) !important;
-    will-change: transform;
+    transform: scale(1) !important;
+    will-change: auto !important;
   }
 
   .gallery-row .media-item:hover img,
