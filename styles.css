@@ -506,7 +506,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1408,11 +1408,14 @@ body.page-full-gallery .onepage-section__heading {
     box-shadow: none !important;
     transform: scale(1) !important;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    --view-gallery-pill-out-duration: 0.16s;
+    --view-gallery-star-delay: 0.16s;
+    --view-gallery-star-pop-duration: 0.3s;
     transition:
-      color 0.22s ease,
-      background 0.22s ease,
-      border-color 0.22s ease,
-      box-shadow 0.22s ease !important;
+      color var(--view-gallery-pill-out-duration) ease,
+      background var(--view-gallery-pill-out-duration) ease,
+      border-color var(--view-gallery-pill-out-duration) ease,
+      box-shadow var(--view-gallery-pill-out-duration) ease !important;
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:hover .home-start-btn__label,
@@ -1440,9 +1443,12 @@ body.page-full-gallery .onepage-section__heading {
       calc(var(--view-gallery-burst-spin-duration, 40s) / 2)
       linear
       infinite;
+    animation-delay: var(--view-gallery-star-delay, 0.16s);
     transition:
-      opacity 0.25s ease,
-      scale 0.32s cubic-bezier(0.22, 1.12, 0.36, 1);
+      opacity var(--view-gallery-star-pop-duration, 0.3s)
+        cubic-bezier(0.22, 1.12, 0.36, 1) var(--view-gallery-star-delay, 0.16s),
+      scale var(--view-gallery-star-pop-duration, 0.3s)
+        cubic-bezier(0.22, 1.12, 0.36, 1) var(--view-gallery-star-delay, 0.16s);
   }
 
   body.page-home .home-bio-row .home-start-btn--pov:not(:hover)::before {
@@ -2107,7 +2113,7 @@ body.page-full-gallery .portfolio-date-group {
   --portfolio-date-pad-x: var(--space-3);
   --portfolio-date-pad-bottom: var(--space-3);
   scroll-margin-top: calc(128px + env(safe-area-inset-top, 0px) + 1.25rem);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: none;
   border-radius: 14px;
   background: #000000;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
@@ -2151,8 +2157,6 @@ body.page-full-gallery .portfolio-date-rows > .portfolio-date-grid + .portfolio-
     --portfolio-date-pad-x: var(--portfolio-section-gap, 8px);
     scroll-margin-top: calc(104px + env(safe-area-inset-top, 0px) + 1.25rem);
     border-radius: 0;
-    border-left: none;
-    border-right: none;
     box-sizing: border-box;
   }
 
