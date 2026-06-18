@@ -506,7 +506,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("Assets/optimized/1780443494761.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3408,6 +3408,11 @@ body.page-profile {
     padding-right: 0;
   }
 
+  /* Title band is in document flow; main top padding would double-clear the header. */
+  body.page-home .page.page--onepage {
+    padding-top: 0;
+  }
+
   html {
     scroll-padding-top: calc(104px + env(safe-area-inset-top, 0px) + 1.25rem);
     /* Avoid smooth programmatic corrections feeling like a delayed jump on touch scroll. */
@@ -3699,34 +3704,7 @@ body.page-contact .page--contact .contact__card {
   }
 
   body.page-home .onepage-section--home {
-    gap: 0;
-  }
-
-  .gallery {
-    gap: 0.65rem;
-    transform: translateY(calc(24px - 0.35in));
-    margin-bottom: var(--home-flow-edge-gap, 0.75rem);
-  }
-
-  body.page-home .home-flow-heading {
-    --home-flow-pill-bleed: 4rem;
-    --home-flow-header-offset: calc(104px + env(safe-area-inset-top, 0px) + 0.75rem);
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
-    width: calc(100vw + var(--home-flow-pill-bleed));
-    max-width: none;
-    margin-inline: calc(50% - 50vw - (var(--home-flow-pill-bleed) / 2));
-    margin-top: calc(-1 * var(--home-flow-header-offset));
-    margin-bottom: 0.5in;
-    padding-top: var(--home-flow-header-offset);
-    padding-inline: 1.15em;
-    padding-bottom: calc(0.55em + 0.2in);
-    font-family: var(--font-sans);
-    font-size: clamp(
+    --home-flow-heading-font: clamp(
       0.55rem,
       calc(
         (
@@ -3736,6 +3714,47 @@ body.page-contact .page--contact .contact__card {
       ),
       1.25rem
     );
+    --home-flow-header-offset: calc(104px + env(safe-area-inset-top, 0px) + 0.75rem);
+    --home-flow-block-gap: calc(0.75rem + var(--space-3));
+    gap: 0;
+    padding-top: 0;
+  }
+
+  body.page-home .gallery {
+    gap: 0.65rem;
+    transform: none;
+    margin-top: var(--home-flow-block-gap);
+    margin-bottom: var(--home-flow-block-gap);
+  }
+
+  body.page-home .home-flow-heading {
+    --home-flow-pill-bleed: 4rem;
+    --home-flow-header-offset: calc(104px + env(safe-area-inset-top, 0px) + 0.75rem);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(100vw + var(--home-flow-pill-bleed));
+    max-width: none;
+    margin-inline: calc(50% - 50vw - (var(--home-flow-pill-bleed) / 2));
+    margin-top: 0;
+    padding-top: var(--home-flow-header-offset);
+    padding-inline: 1.15em;
+    padding-bottom: calc(0.55em + 0.2in);
+    font-family: var(--font-sans);
+    font-size: var(--home-flow-heading-font, clamp(
+      0.55rem,
+      calc(
+        (
+            100vw - max(0.75rem, env(safe-area-inset-left, 0px)) -
+              max(0.75rem, env(safe-area-inset-right, 0px))
+          ) / 21
+      ),
+      1.25rem
+    ));
     font-weight: 600;
     line-height: 1;
     letter-spacing: 0.14em;
@@ -3762,8 +3781,9 @@ body.page-contact .page--contact .contact__card {
     line-height: 1.45;
   }
 
-  .home-bio-row {
+  body.page-home .home-bio-row {
     width: auto;
+    margin-top: 0;
     margin-left: max(0.9rem, env(safe-area-inset-left, 0px));
     margin-right: max(0.9rem, env(safe-area-inset-right, 0px));
     padding: 1.35rem max(1.15rem, env(safe-area-inset-left, 0px))
@@ -3813,9 +3833,9 @@ body.page-contact .page--contact .contact__card {
     letter-spacing: -0.015em;
   }
 
-  /* Fixed height: avoid svh/vh jumps when iOS / in-app browser chrome hides on scroll. */
+  /* 2:3 portrait tiles: height tracks JS/CSS --flow-item-width. */
   .gallery-row {
-    height: 13.5rem;
+    height: calc(var(--flow-item-width, 200px) * 1.5);
   }
 
   /* Flow tiles stay tappable on mobile; hover effects disabled in shared touch query above. */
@@ -3885,13 +3905,6 @@ body.page-contact .page--contact .contact__card {
 
   .hire-pill-cta:hover {
     transform: translateY(-1px) scale(1);
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-row {
-    height: clamp(10.5rem, 28vh, 15rem);
-    height: clamp(10.5rem, 28svh, 15rem);
   }
 }
 
