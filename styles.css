@@ -1190,6 +1190,8 @@ body.page-full-gallery .onepage-section__heading {
 
 .home-bio-image {
   width: min(62rem, calc(100% - 3rem));
+  /* Keep natural aspect ratio: the HTML height attribute must not fix the height. */
+  height: auto;
   margin: var(--space-3) auto var(--space-2);
   display: block;
   border-radius: calc(var(--radius-md) + 2px);
@@ -3162,14 +3164,15 @@ body.page-profile {
 }
 
 .contact__card {
-  background: rgba(252, 252, 250, 0.2);
+  /* Dark frosted glass: keeps text contrast WCAG-safe over any slideshow photo. */
+  background: rgba(12, 12, 14, 0.62);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: var(--shadow-md);
   border-radius: var(--radius-md);
   padding: var(--space-6) var(--space-6) var(--space-5);
-  color: #141414;
+  color: #f5f5f5;
 }
 
 .contact__heading {
@@ -3178,7 +3181,7 @@ body.page-profile {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0 0 var(--space-2);
-  color: #0a0a0a;
+  color: #ffffff;
   scroll-margin-top: calc(128px + env(safe-area-inset-top, 0px) + 1.25rem);
   overflow-wrap: anywhere;
 }
@@ -3186,7 +3189,7 @@ body.page-profile {
 .contact__intro {
   font-size: 0.9375rem;
   line-height: 1.55;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 var(--space-5);
   overflow-wrap: anywhere;
 }
@@ -3202,7 +3205,7 @@ body.page-profile {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.92);
   margin-top: 0.75rem;
 }
 
@@ -3217,7 +3220,7 @@ body.page-profile {
   font-family: inherit;
   font-size: 0.9375rem;
   color: #0a0a0a;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-sm);
   transition:
@@ -3227,7 +3230,7 @@ body.page-profile {
 }
 
 .contact__input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.62);
 }
 
 .contact__input:focus {
@@ -3245,7 +3248,7 @@ body.page-profile {
 }
 
 .contact__textarea::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.62);
 }
 
 .contact__textarea:focus {
@@ -3286,19 +3289,19 @@ body.page-profile {
   display: flex;
   justify-content: center;
   padding-top: var(--space-4);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .contact__instagram {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(0, 0, 0, 0.78);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  border: 1px solid var(--outline-dark);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.9rem;
   transition:
@@ -3603,15 +3606,16 @@ body.page-profile {
     margin: 0;
   }
 
-.page--onepage .onepage-section--contact .contact__card {
-  background: rgba(252, 252, 250, 0.2);
-}
 
   .page--onepage .onepage-section--contact .contact__heading,
   .page--onepage .onepage-section--contact .contact__intro,
+  .page--onepage .onepage-section--contact .contact__label,
   body.page-contact .page--contact .contact__heading,
-  body.page-contact .page--contact .contact__intro {
+  body.page-contact .page--contact .contact__intro,
+  body.page-contact .page--contact .contact__label {
     color: #fff;
+    /* Soft shadow keeps WCAG contrast when the photo backdrop has light patches. */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
   }
 
   .page--onepage .onepage-section--contact .contact__form {
@@ -3668,9 +3672,6 @@ body.page-profile {
     padding: 0 max(1rem, env(safe-area-inset-left, 0px)) 0 max(1rem, env(safe-area-inset-right, 0px));
   }
 
-body.page-contact .page--contact .contact__card {
-  background: rgba(252, 252, 250, 0.2);
-}
 
   body.page-contact .page--contact .contact__heading,
   body.page-contact .page--contact .contact__intro {
