@@ -4278,17 +4278,17 @@ body.page-profile {
 
 .lightbox__close {
   position: fixed;
-  top: 50%;
-  right: calc(22px + 0.35in);
-  transform: translateY(calc(-50% - 3.5in));
-  width: 88px;
-  height: 88px;
+  top: calc(clamp(16px, 2.4vw, 32px) + env(safe-area-inset-top, 0px));
+  right: calc(clamp(16px, 2.4vw, 32px) + env(safe-area-inset-right, 0px));
+  transform: none;
+  width: clamp(48px, 4vw, 64px);
+  height: clamp(48px, 4vw, 64px);
   border-radius: var(--radius-pill);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
   line-height: 1;
   font-weight: 300;
   color: #000000;
@@ -4298,10 +4298,12 @@ body.page-profile {
   box-shadow: var(--shadow-md);
   z-index: 2;
   padding: 0;
+  cursor: pointer;
   transition:
     background var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
     opacity var(--duration-fast) var(--ease-out);
 }
 
@@ -4312,16 +4314,16 @@ body.page-profile {
 
 .lightbox__close:hover {
   color: #000000;
-  background: rgba(250, 248, 245, 0.96);
-  opacity: 0.92;
+  background: #ffffff;
+  transform: scale(1.05);
 }
 
 .lightbox__arrow {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  width: 88px;
-  height: 88px;
+  width: clamp(52px, 4.6vw, 72px);
+  height: clamp(52px, 4.6vw, 72px);
   border-radius: var(--radius-pill);
   border: none;
   display: flex;
@@ -4336,15 +4338,24 @@ body.page-profile {
   box-shadow: var(--shadow-md);
   z-index: 2;
   padding: 0;
+  cursor: pointer;
   transition:
     background var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
     opacity var(--duration-fast) var(--ease-out);
 }
 
 .lightbox__arrow:hover {
-  background: rgba(250, 248, 245, 0.96);
-  opacity: 0.92;
+  background: #ffffff;
+}
+
+.lightbox__arrow--prev:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox__arrow--next:hover {
+  transform: translateY(-50%) scale(1.05);
 }
 
 .lightbox__arrow-icon {
@@ -4371,11 +4382,26 @@ body.page-profile {
 }
 
 .lightbox__arrow--prev {
-  left: calc(26px + 0.3in);
+  left: clamp(14px, 2.2vw, 40px);
 }
 
 .lightbox__arrow--next {
-  right: calc(26px + 0.3in);
+  right: clamp(14px, 2.2vw, 40px);
+}
+
+/* Tablets / small laptops: pull the controls in so they never overlap the image */
+@media (max-width: 1024px) {
+  .lightbox__content {
+    max-width: min(94vw, 1000px);
+  }
+
+  .lightbox__arrow--prev {
+    left: max(12px, env(safe-area-inset-left, 0px));
+  }
+
+  .lightbox__arrow--next {
+    right: max(12px, env(safe-area-inset-right, 0px));
+  }
 }
 
 /* Lightbox + flowing gallery: phones and notched devices */
@@ -4401,16 +4427,31 @@ body.page-profile {
     top: max(10px, env(safe-area-inset-top, 0px));
     right: max(10px, env(safe-area-inset-right, 0px));
     transform: none;
-    width: 48px;
-    height: 48px;
-    font-size: 32px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.75rem;
   }
 
+  .lightbox__close:hover {
+    transform: none;
+  }
+
+  /* On phones the arrows drop to the bottom corners so thumbs can reach them */
   .lightbox__arrow {
     width: 52px;
     height: 52px;
     top: auto;
     bottom: max(18px, env(safe-area-inset-bottom, 0px));
+    transform: none;
+  }
+
+  .lightbox__arrow--prev,
+  .lightbox__arrow--next {
+    transform: none;
+  }
+
+  .lightbox__arrow--prev:hover,
+  .lightbox__arrow--next:hover {
     transform: none;
   }
 
@@ -4420,5 +4461,21 @@ body.page-profile {
 
   .lightbox__arrow--next {
     right: max(12px, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Landscape phones: keep arrows on the sides where there's horizontal room */
+@media (max-width: 900px) and (orientation: landscape) {
+  .lightbox__arrow {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+  }
+
+  .lightbox__image,
+  .lightbox__video {
+    max-height: min(90dvh, 100%);
   }
 }
