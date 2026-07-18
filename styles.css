@@ -506,7 +506,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("1780443494761.webp");
+  background-image: url("home-hero-backdrop.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1841,8 +1841,41 @@ html.site-boot-locked body {
   pointer-events: auto;
 }
 
-html.site-boot-locked:has(body.page-full-gallery) .site-boot-gate {
+/* Simple spinner so the boot wait reads as loading rather than a dead screen. */
+.site-boot-gate::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.75);
+  animation: site-boot-spin 0.9s linear infinite;
+}
+
+body.page-full-gallery .site-boot-gate {
   background: #f0f0f0;
+}
+
+body.page-full-gallery .site-boot-gate::after {
+  border-color: rgba(0, 0, 0, 0.14);
+  border-top-color: rgba(0, 0, 0, 0.55);
+}
+
+@keyframes site-boot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-boot-gate::after {
+    animation: none;
+    display: none;
+  }
 }
 
 .site-boot-gate[hidden] {
