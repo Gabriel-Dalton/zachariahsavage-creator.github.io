@@ -4221,6 +4221,9 @@ body.page-profile {
   display: none;
   align-items: center;
   justify-content: center;
+  /* Disable browser double-tap-to-zoom inside the lightbox so quick taps on the
+     nav arrows advance images instead of zooming the page. */
+  touch-action: manipulation;
 }
 
 .lightbox[data-state="open"] {
@@ -4249,6 +4252,7 @@ body.page-profile {
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
 }
 
 .lightbox__media {
@@ -4269,6 +4273,9 @@ body.page-profile {
   max-height: 90vh;
   object-fit: contain;
   display: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .lightbox__image[data-active="true"],
@@ -4299,6 +4306,10 @@ body.page-profile {
   z-index: 2;
   padding: 0;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out),
@@ -4339,6 +4350,10 @@ body.page-profile {
   z-index: 2;
   padding: 0;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out),
@@ -4436,31 +4451,33 @@ body.page-profile {
     transform: none;
   }
 
-  /* On phones the arrows drop to the bottom corners so thumbs can reach them */
+  /* Arrows stay vertically centered on the left/right edges, overlaid on the
+     image, for a cleaner and more modern feel. */
   .lightbox__arrow {
-    width: 52px;
-    height: 52px;
-    top: auto;
-    bottom: max(18px, env(safe-area-inset-bottom, 0px));
-    transform: none;
+    width: 44px;
+    height: 44px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    background: rgba(250, 248, 245, 0.82);
   }
 
-  .lightbox__arrow--prev,
-  .lightbox__arrow--next {
-    transform: none;
+  .lightbox__arrow--prev:active,
+  .lightbox__arrow--next:active {
+    transform: translateY(-50%) scale(0.94);
   }
 
   .lightbox__arrow--prev:hover,
   .lightbox__arrow--next:hover {
-    transform: none;
+    transform: translateY(-50%);
   }
 
   .lightbox__arrow--prev {
-    left: max(12px, env(safe-area-inset-left, 0px));
+    left: max(10px, env(safe-area-inset-left, 0px));
   }
 
   .lightbox__arrow--next {
-    right: max(12px, env(safe-area-inset-right, 0px));
+    right: max(10px, env(safe-area-inset-right, 0px));
   }
 }
 
