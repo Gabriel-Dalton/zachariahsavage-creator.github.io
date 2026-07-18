@@ -3483,40 +3483,59 @@ function setupHireAvailabilityPill() {
   cta.appendChild(actionBtn);
   document.body.appendChild(cta);
 
-  let shown = false;
-  let lastTop = getPageScrollTop();
+  // The pill is a shortcut TO the contact form, so it should only be useful
+  // while the visitor is still browsing above it. Show it once they've scrolled
+  // past the first screen of gallery content, and hide it again the moment the
+  // contact section itself scrolls into view (they no longer need a shortcut).
   let unregisterMobileScroll = null;
-  function getContactEntryTriggerTop() {
-    const sectionTop = contactSection.getBoundingClientRect().top + getPageScrollTop();
-    return Math.max(0, sectionTop - getFixedHeaderScrollOffset());
+  let contactInView = false;
+
+  function isDismissed() {
+    return cta.classList.contains("hire-pill-cta--dismissed");
   }
 
-  function maybeShow() {
-    if (shown) return;
-    if (cta.classList.contains("hire-pill-cta--dismissed")) return;
-    const top = getPageScrollTop();
-    const delta = top - lastTop;
-    const triggerTop = getContactEntryTriggerTop();
-    const crossedIntoContactFromAbove = delta > 0 && lastTop < triggerTop && top >= triggerTop;
-    lastTop = top;
-    if (crossedIntoContactFromAbove) {
-      shown = true;
-      // Next frame: allow CSS transition to run.
-      requestAnimationFrame(() => cta.classList.add("is-visible"));
-      if (unregisterMobileScroll) {
-        unregisterMobileScroll();
-        unregisterMobileScroll = null;
-      } else {
-        window.removeEventListener("scroll", maybeShow);
-      }
-    }
+  function setVisible(visible) {
+    if (isDismissed()) return;
+    cta.classList.toggle("is-visible", visible);
+  }
+
+  // Reveal after the visitor has committed to scrolling down through the work.
+  function getRevealTriggerTop() {
+    const viewport = window.innerHeight || document.documentElement.clientHeight || 0;
+    return viewport * 0.4;
+  }
+
+  function updatePillVisibility() {
+    if (isDismissed()) return;
+    const scrolledEnough = getPageScrollTop() > getRevealTriggerTop();
+    setVisible(scrolledEnough && !contactInView);
+  }
+
+  // IntersectionObserver reliably tells us when the contact section is on screen,
+  // regardless of which element is the scroll container on this device.
+  if (typeof IntersectionObserver === "function") {
+    const contactObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          contactInView = entry.isIntersecting;
+        });
+        updatePillVisibility();
+      },
+      // Only treat the contact section as "in view" once it has scrolled up into
+      // the upper ~45% of the viewport — i.e. the visitor has actually arrived at
+      // the form and no longer needs a shortcut to it.
+      { threshold: 0, rootMargin: "0px 0px -55% 0px" }
+    );
+    contactObserver.observe(contactSection);
   }
 
   // Listen on `window`: when `body` is not the scroll container, `body` scroll events never fire.
-  unregisterMobileScroll = registerMobileScrollHandler(maybeShow);
+  unregisterMobileScroll = registerMobileScrollHandler(updatePillVisibility);
   if (!unregisterMobileScroll) {
-    window.addEventListener("scroll", maybeShow, { passive: true });
+    window.addEventListener("scroll", updatePillVisibility, { passive: true });
   }
+  window.addEventListener("resize", updatePillVisibility, { passive: true });
+  updatePillVisibility();
 }
 
 function setupHeaderPillsScrollFade() {
